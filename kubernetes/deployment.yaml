@@ -17,4 +17,6 @@ spec:
         image: nandhini1694/pro:latest  # Change this to your Docker image
         ports:
         - containerPort: 3004
-
+        env:
+        - name: NODE_TLS_REJECT_UNAUTHORIZED
+          value: "0"
