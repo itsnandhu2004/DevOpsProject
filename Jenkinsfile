@@ -8,11 +8,12 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/itsnandhu2004/DevOpsProject.git'
+              git branch: 'main', url: 'https://github.com/itsnandhu2004/DevOpsProject.git'
             }
         }
         stage('Build Docker Image') {
             steps {
+                sh 'ls -l app/'  // Verify Dockerfile is in the correct path
                 sh 'docker build -t $IMAGE_NAME:latest .'
             }
         }
