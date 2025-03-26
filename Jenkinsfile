@@ -13,6 +13,7 @@ pipeline {
         }
         stage('Build Docker Image') {
             steps {
+                sh 'ls -l app/'  // Verify Dockerfile is in the correct path
                 sh 'docker build -t $IMAGE_NAME:latest .'
             }
         }
