@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pro-deployment
+spec:
+  replicas: 2  # Number of application instances
+  selector:
+    matchLabels:
+      app: pro
+  template:
+    metadata:
+      labels:
+        app: pro
+    spec:
+      containers:
+      - name: pro
+        image: nandhini1694/pro:latest  # Change this to your Docker image
+        ports:
+        - containerPort: 3004
+
