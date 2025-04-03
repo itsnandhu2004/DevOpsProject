@@ -15,6 +15,7 @@ pipeline {
             steps {
                 sh 'ls -l app/'  // Verify Dockerfile is in the correct path
                 sh 'docker build -t $IMAGE_NAME:latest .'
+                 export DOCKER_TLS_VERIFY=0  # Disable TLS verification
             }
         }
         stage('Push Docker Image') {
